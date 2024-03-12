@@ -100,6 +100,47 @@ describe('url 2', () =>
       });*/
 });
   
+describe('url 3', () => 
+{
+  it('Compare yellow value with cell value', () => {
+    cy.visit('http://uitestingplayground.com/dynamictable');
+    
+    //cy.get('[role="rowgroup"]').get('[role="row"]').contains('Chrome');
+    
+    cy.get('[role="rowgroup"]').first().within(() => {
+      cy.get('[role="row"]')
+        .get('[role="columnheader"]').each(($col, colIndex) => {
+        if ($col.text().includes('CPU')) {
+          const colNumber = colIndex;
+          cy.log(`CPU is found on column index: ${colNumber}`);
 
-  
-        
+        }
+      });
+    });
+
+    cy.get('section').within(() => 
+    { 
+      //when is necessary to use within and when not?
+      cy.get('div').should('have.class','container')
+        .get('[role="table"]').get('[role="rowgroup"]')
+        .get('[role="row"]').contains('Chrome')
+    });
+
+    /*
+    //how to clear rowIndex value to zero until it gets to
+    //correspondant row that contains Chrome
+    cy.get('[role="rowgroup"]').last().within(() => {
+      cy.get('[role="row"]')
+        .get('[role="cell"]').each(($col, rowIndex) => {
+        if ($col.text().includes('Chrome')) {
+          const rowNumber = rowIndex;
+          cy.log(`Chrome is found on row index: ${rowNumber}`);
+
+        }
+      });
+    });
+    */
+  });
+
+
+});
