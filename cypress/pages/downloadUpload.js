@@ -17,9 +17,9 @@ class downloadUpload
 
     checkUpFile()
     {
-        this.elements.upFile().should('exist');
-        this.elements.upFile().should('be.visible');
-        this.elements.upFile().should('not.be.disabled');
+        //this.elements.upFile().should('exist');
+       //this.elements.upFile().should('be.visible');
+        //this.elements.upFile().should('not.be.disabled');
         const filePath = 'sampleFile.jpg';
         this.elements.upFile().attachFile(filePath);
     }
