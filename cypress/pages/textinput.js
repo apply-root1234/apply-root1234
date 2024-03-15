@@ -7,14 +7,16 @@ class textinput
         updatingButton: () => cy.get('#updatingButton')
     }
     
-    changeButton()
+    changeButton(text)
     {
-        this.elements.newButtonName().type('QA is FUN');
+        this.elements.newButtonName().type(text);
     }
 
-    updateButton()
+    updateButton(expectedValue)
     {  
-        this.elements.updatingButton().click(); 
+        this.elements.updatingButton().click();
+        //this.elements.updatingButton().contains(expectedValue)
+        this.elements.updatingButton().should('contain.text', expectedValue)
     }
     
     

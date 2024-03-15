@@ -42,6 +42,7 @@ class dynamicTable
                     cy.log(`CPU value for Chrome: ${cpuValue}`); 
                     //printed to check if was well extracted
                     this.elements.yellowLabel().contains(cpuValue);
+                    this.elements.yellowLabel().should('contain.text', cpuValue) //Just another way to validate but the other is also fine
                     //assertion was made according to exercise
                     cy.log(`CPU value for Chrome matches yellow label`); 
                 }

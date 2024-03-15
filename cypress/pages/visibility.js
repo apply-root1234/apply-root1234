@@ -29,11 +29,13 @@ class visibility
         this.elements.zeroWidthBtn().invoke('width').should('be.eql', 0);
     }
     
+    //Should be validated differently
     checkOverlappedBtn()
     {
         //'Overlapped' button should be present but might be covered by another element
         // Was there something else needed to be added here?
         this.elements.overlappedBtn().should('be.visible');
+        //this.elements.overlappedBtn().should('be.below',);
     }
     
     checkOpacityBtn()
@@ -55,6 +57,7 @@ class visibility
         this.elements.notDisplayedBtn().should('not.be.visible');
     }
 
+    //Should be validated differently
     checkOffscreenBtn()
     {
         //'Offscreen' button should be present but located off the visible screen
