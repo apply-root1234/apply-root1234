@@ -11,10 +11,10 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.6",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "neat-csv": "^5.2.0"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.4.1",
-    "neat-csv": "^7.0.0"
+    "@faker-js/faker": "^8.4.1"
   }
 }

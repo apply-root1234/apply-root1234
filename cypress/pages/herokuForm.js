@@ -80,18 +80,54 @@ class herokuForm
 
         for (let i = 0; i < regData.length; i++) 
          {
-            this.elements.firstName().type(regData[i]['firstName']);
-            this.elements.lastName().type(regData[i]['lastName']);
-            this.elements.birthDate().type(regData[i]['birthData']);
-            this.elements.email().type(regData[i]['email']);;            
-            this.elements.phone().type(regData[i]['phone']);
-            this.elements.street1().type(regData[i]['street1']);
-            this.elements.street2().type(regData[i]['street2']);
-            this.elements.city().type(regData[i]['city']);
-            this.elements.state().type(regData[i]['state']);
-            this.elements.zipcode().type(regData[i]['zipcode']);
-            this.elements.country().type(regData[i]['country']);
-            this.elements.submitBtn().click();
+            if (i<1)
+            {
+                this.elements.firstName().type(regData[i]['firstName']);
+                this.elements.lastName().type(regData[i]['lastName']);
+                this.elements.birthDate().type(regData[i]['birthDate']);
+                this.elements.email().type(regData[i]['email']);            
+                this.elements.phone().type(regData[i]['phone']);
+                this.elements.street1().type(regData[i]['street1']);
+                this.elements.street2().type(regData[i]['street2']);
+                this.elements.city().type(regData[i]['city']);
+                this.elements.state().type(regData[i]['state']);
+                this.elements.zipcode().type(regData[i]['zipcode']);
+                this.elements.country().type(regData[i]['country']);
+                this.elements.submitBtn().click();
+                cy.wait(1000);
+            }
+            else
+            {
+                this.elements.addcontactBtn().click();
+                this.elements.firstName().clear();
+                this.elements.lastName().clear();
+                this.elements.birthDate().clear();
+                this.elements.email().clear();            
+                this.elements.phone().clear();
+                this.elements.street1().clear();
+                this.elements.street2().clear();
+                this.elements.city().clear();
+                this.elements.state().clear();
+                this.elements.zipcode().clear();
+                this.elements.country().clear();
+                this.elements.firstName().type(regData[i]['firstName']);
+                this.elements.lastName().type(regData[i]['lastName']);
+                this.elements.birthDate().type(regData[i]['birthDate']);
+                this.elements.email().type(regData[i]['email']);            
+                this.elements.phone().type(regData[i]['phone']);
+                this.elements.street1().type(regData[i]['street1']);
+                this.elements.street2().type(regData[i]['street2']);
+                this.elements.city().type(regData[i]['city']);
+                this.elements.state().type(regData[i]['state']);
+                this.elements.zipcode().type(regData[i]['zipcode']);
+                this.elements.country().type(regData[i]['country']);
+                this.elements.submitBtn().click();
+                
+            }
+            
+
+            
+
         }
 
     }
