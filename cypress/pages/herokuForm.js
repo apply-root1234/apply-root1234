@@ -27,10 +27,7 @@ class herokuForm
 
     }
 
-    signupProcess(user,name,regData)
-    {
-        this.elements.signupBtn().click();
-        this.elements.cancelBtn().click(); //check cancel button first
+    validateSignUpPage(){
         this.elements.signupBtn().click();
         this.elements.firstName().should('exist').should('be.visible').should('not.be.disabled');
         this.elements.lastName().should('exist').should('be.visible').should('not.be.disabled');
@@ -38,10 +35,29 @@ class herokuForm
         this.elements.password().should('exist').should('be.visible').should('not.be.disabled');
         this.elements.submitBtn().should('exist').should('be.visible').should('not.be.disabled');
         this.elements.cancelBtn().should('exist').should('be.visible').should('not.be.disabled');
+    }
 
+    validateSignUpPageErrors(){
         cy.log('Validating form cannot be sent blank');
         this.elements.submitBtn().click();
         this.elements.errorMsg().should('contain','User validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Email is invalid, password: Path `password` is required.');
+    }
+    
+    signupProcess(user,name,regData)
+    {
+        this.elements.signupBtn().click();
+        this.elements.cancelBtn().click(); //check cancel button first
+        // this.elements.signupBtn().click();
+        // this.elements.firstName().should('exist').should('be.visible').should('not.be.disabled');
+        // this.elements.lastName().should('exist').should('be.visible').should('not.be.disabled');
+        // this.elements.email().should('exist').should('be.visible').should('not.be.disabled');
+        // this.elements.password().should('exist').should('be.visible').should('not.be.disabled');
+        // this.elements.submitBtn().should('exist').should('be.visible').should('not.be.disabled');
+        // this.elements.cancelBtn().should('exist').should('be.visible').should('not.be.disabled');
+
+        // cy.log('Validating form cannot be sent blank');
+        // this.elements.submitBtn().click();
+        // this.elements.errorMsg().should('contain','User validation failed: firstName: Path `firstName` is required., lastName: Path `lastName` is required., email: Email is invalid, password: Path `password` is required.');
         this.elements.firstName().type(faker.person.firstName());
         this.elements.lastName().type(faker.person.lastName());
 
