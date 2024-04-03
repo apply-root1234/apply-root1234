@@ -1,4 +1,4 @@
-import commands from "../../support/commands";
+//import commands from "../../support/commands";
 /*
 - Create a Cypress custom command to Login the following website: https://naveenautomationlabs.com/opencart/index.php?route=account/login 
 - After login, search for the item: Macbook, on the search bar. 
