@@ -1,24 +1,28 @@
 import 'cypress-file-upload';
 
-Cypress.Commands.add('login', (email, password) => {
+Cypress.Commands.add('login', (email, password) => 
+{
   cy.get(`input[id="input-email"]`).type(email);
   cy.get(`input[id="input-password"]`).type(password);
   cy.get(`input[type="submit"]`).click();
-
-  //Validation check url
-  
+  cy.log('******** Validating URL after logging in ********');
+  cy.url().should('eq','https://naveenautomationlabs.com/opencart/index.php?route=account/account');
 });
 
 Cypress.Commands.add('search', (term) => {
   cy.get(`input[type="text"]`).type(term);
   cy.get(`span[class="input-group-btn"]`).click();
-  //Validation that search was made
+  cy.get('#input-search').invoke('val').then((actualValue) => {
+    expect(actualValue).to.eq(term);
+  });
+  cy.get('h1').should('contain',term);
 });
 
 Cypress.Commands.add('logout', () => {
-  // 1. ensure the dropdown is open
   cy.get('a[title="My Account"]').click();
   cy.get('a[href="https://naveenautomationlabs.com/opencart/index.php?route=account/logout"]').click();
+  cy.url().should('eq','https://naveenautomationlabs.com/opencart/index.php?route=account/logout');  
+  cy.contains('a', 'Continue').click();
 });
 
 // ***********************************************
