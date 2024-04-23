@@ -1,0 +1,72 @@
+
+[
+    {
+        "firstName": "Nora",
+        "lastName": "Walsh",
+        "birthdate": "1989-05-13",
+        "email": "norawalsh@mail.com",
+        "phone": "2151234567",
+        "street1": "55 East 10th",
+        "street2": "13 Washington Square",
+        "city": "New York",
+        "stateProvince": "Massachussets",
+        "postalCode": "10011",
+        "country": "USA"
+    },
+    {
+        "firstName": "Marc",
+        "lastName": "Black",
+        "birthdate": "1987-07-20",
+        "email": "marcblack@mail.com",
+        "phone": "2151283745",
+        "street1": "55 Clark St",
+        "street2": "181 Mercer Street",
+        "city": "California",
+        "stateProvince": "Pennsylvania",
+        "postalCode": "10012",
+        "country": "USA"
+    },
+
+    {
+        "firstName": "Diego",
+        "lastName": "Diaz",
+        "birthdate": "1991-09-12",
+        "email": "diegodiaz@mail.com",
+        "phone": "2150122923",
+        "street1": "242 Greene St",
+        "street2": "20 Cooper Square",
+        "city": "San Francisco",
+        "stateProvince": "Maine",
+        "postalCode": "10003",
+        "country": "USA"
+    },
+
+    {
+        "firstName": "David",
+        "lastName": "Lopez",
+        "birthdate": "1981-04-12",
+        "email": "davidlopez@mail.com",
+        "phone": "2150543923",
+        "street1": "242 West St",
+        "street2": "20 Aurum Square",
+        "city": "Connecticut",
+        "stateProvince": "Maine",
+        "postalCode": "10006",
+        "country": "USA"
+    },
+
+    {
+        "firstName": "Penny",
+        "lastName": "Gomez",
+        "birthdate": "1992-02-22",
+        "email": "pgomez@mail.com",
+        "phone": "2150543953",
+        "street1": "240 South St",
+        "street2": "20 Zephyr Square",
+        "city": "San Diego",
+        "stateProvince": "Maine",
+        "postalCode": "10015",
+        "country": "USA"
+    }
+    
+]

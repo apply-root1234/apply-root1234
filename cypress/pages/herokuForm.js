@@ -27,7 +27,7 @@ class herokuForm
 
     }
 
-    signupProcess(user,name,regData)
+    signupCSV(regData)
     {
         this.elements.signupBtn().click();
         this.elements.cancelBtn().click(); //check cancel button first
@@ -65,6 +65,18 @@ class herokuForm
         this.elements.logout().click();
 
     };
+
+    signupAPI()
+    {
+        this.elements.signupBtn().click();
+        this.elements.firstName().type(faker.person.firstName());
+        this.elements.lastName().type(faker.person.lastName());
+        this.elements.email().type(faker.internet.email());
+        this.elements.password().type(faker.internet.password());
+        this.elements.submitBtn().click();
+        
+    };
+
 
     validateForm()
     {
