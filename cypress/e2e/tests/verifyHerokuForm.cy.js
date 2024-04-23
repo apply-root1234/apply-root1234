@@ -26,7 +26,24 @@ describe('Registration Form', () =>
         cy.intercept ('GET', 'https://thinking-tester-contact-list.herokuapp.com/contacts', { fixture: "contacts.json"});
         cy.visit('https://thinking-tester-contact-list.herokuapp.com/');
         herokuForm.signupAPI();
-        
+        cy.fixture('contacts.json').then((contacts) => {
+            cy.get('.contactTableBodyRow').each(($row, index) => {
+              // The JSON is an array and each object corresponds to a row
+              const contact = contacts[index];
+              const fullName = `${contact.firstName} ${contact.lastName}`;
+              const address = `${contact.street1} ${contact.street2}`;
+              const cityStatePostal = `${contact.city} ${contact.stateProvince} ${contact.postalCode}`;
+          
+              // Comparing each cell
+              cy.wrap($row).find('td').eq(1).should('have.text', fullName);
+              cy.wrap($row).find('td').eq(2).should('have.text', contact.birthdate); 
+              cy.wrap($row).find('td').eq(3).should('have.text', contact.email);
+              cy.wrap($row).find('td').eq(4).should('have.text', contact.phone);
+              cy.wrap($row).find('td').eq(5).should('have.text', address);
+              cy.wrap($row).find('td').eq(6).should('have.text', cityStatePostal);
+              cy.wrap($row).find('td').eq(7).should('have.text', contact.country);
+            });
+          });
         
         
 
